@@ -77,13 +77,16 @@ function changeNearby(stationList) {
         i.innerText = element;
         nearbyStationBox.appendChild(i);
     });
+    nearbySelected = nearbyStationBox.value;
 }
 
 function PlayAudio() {
-  playerOfAudio.PlayAudio(stationSelected, lineSelected, getDestination(stationSelected, lineSelected, nearbySelected), );
+  playerOfAudio.PlayAudio(stationSelected, lineSelected, getDestination(lineSelected, stationSelected, nearbySelected), typeBox, nearbySelected);
+  //var test = new Audio("/resc/audio/Chimes/DoorChime.wav");
+  //test.play();
 }
 
-const playerOfAudio = new AudioPlayer();
+const playerOfAudio = new AudioPlayer;
 const nearbyStationBox = document.getElementById("NearbyBox");
 const doesServiceChecker = document.getElementById("StationChecker");
 const stationSelect = document.getElementById("SelectStation");
