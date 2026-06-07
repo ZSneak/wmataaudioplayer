@@ -182,7 +182,7 @@ ApproachingStation(line, station, destination, previous) {
     audios.push(new Audio("/resc/audio/TransitionWords/ThisIs.wav"));
     audios.push(new Audio(`/resc/audio/Stations/${station}.wav`));
     if (station == destination) {
-        audios.push(new Audio("/resc/audio/TransitionWords/LastStop.wav"));
+        // audios.push(new Audio("/resc/audio/TransitionWords/LastStop.wav"));
     }
     
     const addAudioIfExists = async (url, volume = null) => {
@@ -205,11 +205,11 @@ ApproachingStation(line, station, destination, previous) {
     addAudioIfExists(`/resc/audio/Transfers/${line}/${station}WEST${previous}.wav`);
 
     console.log(metroLineLists[line].includes(station));
-    if (metroLineLists[line].includes(station)) {
-        addAudioIfExists("/resc/audio/DoorDir/Left.wav");
-    } else{
-        addAudioIfExists("/resc/audio/DoorDir/Right.wav");
-    }
+    // if (metroLineLists[line].includes(station)) {
+        // addAudioIfExists("/resc/audio/DoorDir/Left.wav");
+    // } else{
+        // addAudioIfExists("/resc/audio/DoorDir/Right.wav");
+    // }
     console.log("Doors will open on the " + (metroLineLists[line].includes(station)) ? "Left" : "Right");
 
 
