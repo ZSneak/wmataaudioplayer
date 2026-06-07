@@ -86,12 +86,18 @@ function PlayAudio() {
   //test.play();
 }
 
+function Dialog() {
+  dialog.showModal();
+}
+
 const playerOfAudio = new AudioPlayer;
 const nearbyStationBox = document.getElementById("NearbyBox");
 const doesServiceChecker = document.getElementById("StationChecker");
 const stationSelect = document.getElementById("SelectStation");
 const lineSelect = document.getElementById("SelectLine");
 const audioTypeBox = document.getElementById("TypeBox");
+const alertBox = document.getElementById("alertbox");
+const dialog = document.getElementById("settings");
 
 let stationSelected = stationSelect.value;
 let lineSelected = lineSelect.value;
@@ -101,14 +107,16 @@ let typeBox = audioTypeBox.value;
 stationSelect.onchange = function(event) {
     console.log("Station changed to: " + event.target.value);
     stationSelected = event.target.value;
-    doesServiceChecker.innerText = doesLineServeStation(stationSelected, lineSelected) ? "" : "This Line DOES NOT serve this station.";
+    doesServiceChecker.innerHTML = doesLineServeStation(stationSelected, lineSelected) ? "" : ` The <span style="color: ${lineSelected}; text-shadow: 1px 1px 10px rgb(0, 0, 0);">${lineSelected}</span> line does not serve ${stationSelected}.`;
+    if (doesLineServeStation(stationSelected, lineSelected)) {alertBox.classList.add("animate__backOutUp"); alertBox.classList.remove("animate__backInDown");} else {alertBox.classList.remove("animate__backOutUp"); alertBox.classList.add("animate__backInDown");}
     changeNearby(getNeighboringStations(stationSelected, lineSelected));
 };
 
 lineSelect.onchange = function(event) {
     console.log("Line changed to: " + event.target.value);
     lineSelected = event.target.value;
-    doesServiceChecker.innerText = doesLineServeStation(stationSelected, lineSelected) ? "" : "This Line DOES NOT serve this station.";
+    doesServiceChecker.innerHTML = doesLineServeStation(stationSelected, lineSelected) ? "" : ` The <span style="color: ${lineSelected}; text-shadow: 1px 1px 10px rgb(0, 0, 0);">${lineSelected}</span> line does not serve ${stationSelected}.`;
+    if (doesLineServeStation(stationSelected, lineSelected)) {alertBox.classList.add("animate__backOutUp"); alertBox.classList.remove("animate__backInDown");} else {alertBox.classList.remove("animate__backOutUp"); alertBox.classList.add("animate__backInDown");}
     changeNearby(getNeighboringStations(stationSelected, lineSelected));
 };
 
@@ -122,4 +130,4 @@ audioTypeBox.onchange = function(event) {
   typeBox = event.target.value;
 }
 
-
+doesServiceChecker.innerHTML = doesLineServeStation(stationSelected, lineSelected) ? "" : ` The <span style="color: ${lineSelected}; text-shadow: 1px 1px 10px rgb(0, 0, 0);">${lineSelected}</span> line does not serve ${stationSelected}.`;
