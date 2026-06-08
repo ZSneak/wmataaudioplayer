@@ -205,9 +205,10 @@ ApproachingStation(line, station, destination, previous) {
     addAudioIfExists(`/resc/audio/Transfers/${line}/${station}WEST${previous}.wav`);
 
     console.log(metroLineLists[line].includes(station));
+    
     if (metroLineLists[line].includes(station)) {
         addAudioIfExists("/resc/audio/DoorDir/Left.wav");
-    } else{
+    }else{
         addAudioIfExists("/resc/audio/DoorDir/Right.wav");
     }
     console.log("Doors will open on the " + (metroLineLists[line].includes(station)) ? "Left" : "Right");
