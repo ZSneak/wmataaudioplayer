@@ -6,7 +6,7 @@ async PlayAudio(station, line, destination, nearby, nextStop) {
         audiothings = this.AtStation(line, destination, nextStop);
         console.log(audiothings);
     } else {
-        audiothings = this.ApproachingStation(line, nextStop, destination, station);
+        audiothings = await this.ApproachingStation(line, nextStop, destination, station);
         console.log(audiothings);
     }
     
@@ -49,7 +49,7 @@ AtStation(line, destination, nextStop) {
 
 }
 
-ApproachingStation(line, station, destination, previous) {
+async ApproachingStation(line, station, destination, previous) {
     
     const metroLineLists = {
   "Red": [
@@ -198,11 +198,11 @@ ApproachingStation(line, station, destination, previous) {
     var slDest = "Downtown Largo";
     if (line == "Silver") {slDest = ((destination == "New Carrolton") || (destination == "Downtown Largo") ? "WEST" : "EAST");}
 
-    addAudioIfExists(`/resc/audio/Transfers/${line}/${station}.wav`);
-    addAudioIfExists(`/resc/audio/Transfers/${line}/${station}${destination}.wav`);
-    addAudioIfExists(`/resc/audio/Transfers/${line}/${station}${slDest}.wav`);
-    addAudioIfExists(`/resc/audio/Transfers/${line}/${station}${slDest}${destination}.wav`);
-    addAudioIfExists(`/resc/audio/Transfers/${line}/${station}WEST${previous}.wav`);
+    await addAudioIfExists(`/resc/audio/Transfers/${line}/${station}.wav`);
+    await addAudioIfExists(`/resc/audio/Transfers/${line}/${station}${destination}.wav`);
+    await addAudioIfExists(`/resc/audio/Transfers/${line}/${station}${slDest}.wav`);
+    await addAudioIfExists(`/resc/audio/Transfers/${line}/${station}${slDest}${destination}.wav`);
+    await addAudioIfExists(`/resc/audio/Transfers/${line}/${station}WEST${previous}.wav`);
 
     console.log(metroLineLists[line].includes(station));
     if (metroLineLists[line].includes(station)) {

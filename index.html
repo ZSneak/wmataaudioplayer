@@ -12,132 +12,141 @@
         </svg>
     </div>
     <div class="alerts">
-        <div id="alertbox" class="alert alert-warning animate__animated" role="alert" style="position: fixed; left: 25%; top: 14%; z-index: 999;"><img src="/resc/img/download.svg" style="transform: translateY(5px); filter: brightness(0) saturate(100%) invert(59%) sepia(27%) saturate(3070%) hue-rotate(0deg) brightness(104%) contrast(104%);"><span id="StationChecker">This will be the warning alert</span></div>
+        <div id="alertbox" class="alert alert-warning animate__animated animate__backInDown" role="alert" style="position: fixed; left: 25%; top: 14%; z-index: 999;"><img src="/resc/img/download.svg" style="transform: translateY(5px); filter: brightness(0) saturate(100%) invert(59%) sepia(27%) saturate(3070%) hue-rotate(0deg) brightness(104%) contrast(104%);"><span id="StationChecker">This will be the warning alert</span></div>
     </div>
-    <div class="content">
+    <div class="content split">
         <div class="left">
             <h1>About</h1>
             <p>Discover the authentic sounds of the Washington Metropolitan Transit Authority's cutting-edge 7000-series trains. This audio player meticulously recreates the familiar chimes, station announcements, door operations, and transit alerts you'll hear while navigating the DC Metro system. Whether you're a transit enthusiast, preparing for your commute, or simply nostalgic for the rail experience, explore the rich soundscape that defines modern urban transportation in our nation's capital.</p>
         </div>
         <div class="right">
-            <div class="options">
+            <div class="optionpane">
                 <h2>Customize Audio Playback</h2>
-                <p>Select Station</p>
-                <select id="SelectStation">
-                    <option>Addison Road</option>
-                    <option>Anacostia</option>
-                    <option>Archives</option>
-                    <option>Arlington Cemetery</option>
-                    <option>Ballston-MU</option>
-                    <option>Benning Road</option>
-                    <option>Bethesda</option>
-                    <option>Braddock Road</option>
-                    <option>Branch Ave</option>
-                    <option>Brookland-CUA</option>
-                    <option>Capitol Heights</option>
-                    <option>Capitol South</option>
-                    <option>Cheverly</option>
-                    <option>Clarendon</option>
-                    <option>Cleveland Park</option>
-                    <option>College Park-U of Md</option>
-                    <option>Columbia Heights</option>
-                    <option>Congress Heights</option>
-                    <option>Court House</option>
-                    <option>Crystal City</option>
-                    <option>Deanwood</option>
-                    <option>Downtown Largo</option>
-                    <option>Dunn Loring</option>
-                    <option>Dupont Circle</option>
-                    <option>East Falls Church</option>
-                    <option>Eastern Market</option>
-                    <option>Eisenhower Ave</option>
-                    <option>Farragut North</option>
-                    <option>Farragut West</option>
-                    <option>Federal Center SW</option>
-                    <option>Federal Triangle</option>
-                    <option>Foggy Bottom-GWU</option>
-                    <option>Forest Glen</option>
-                    <option>Fort Totten</option>
-                    <option>Franconia-Springfield</option>
-                    <option>Friendship Heights</option>
-                    <option>Gallery Place</option>
-                    <option>Georgia Ave-Petworth</option>
-                    <option>Glenmont</option>
-                    <option>Greenbelt</option>
-                    <option>Greensboro</option>
-                    <option>Grosvenor-Strathmore</option>
-                    <option>Huntington</option>
-                    <option>Hyattsville Crossing</option>
-                    <option>Judiciary Square</option>
-                    <option>King St-Old Town</option>
-                    <option>L'Enfant Plaza</option>
-                    <option>Landover</option>
-                    <option>McLean</option>
-                    <option>McPherson Square</option>
-                    <option>Medical Center</option>
-                    <option>Metro Center</option>
-                    <option>Minnesota Ave</option>
-                    <option>Morgan Boulevard</option>
-                    <option>Mt Vernon Sq</option>
-                    <option>Navy Yard-Ballpark</option>
-                    <option>Naylor Road</option>
-                    <option>New Carrollton</option>
-                    <option>NoMa-Gallaudet U</option>
-                    <option>North Bethesda</option>
-                    <option>Pentagon</option>
-                    <option>Pentagon City</option>
-                    <option>Potomac Ave</option>
-                    <option>Potomac Yard</option>
-                    <option>Rhode Island Ave</option>
-                    <option>Rockville</option>
-                    <option>Ronald Reagan Washington National Airport</option>
-                    <option>Rosslyn</option>
-                    <option>Shady Grove</option>
-                    <option>Shaw-Howard U</option>
-                    <option>Silver Spring</option>
-                    <option>Smithsonian</option>
-                    <option>Southern Ave</option>
-                    <option>Spring Hill</option>
-                    <option>Stadium-Armory</option>
-                    <option>Suitland</option>
-                    <option>Takoma</option>
-                    <option>Tenleytown-AU</option>
-                    <option>Twinbrook</option>
-                    <option>Tysons</option>
-                    <option>U Street</option>
-                    <option>Union Station</option>
-                    <option>Van Dorn Street</option>
-                    <option>Van Ness-UDC</option>
-                    <option>Vienna</option>
-                    <option>Virginia Square-GMU</option>
-                    <option>Waterfront</option>
-                    <option>West Falls Church</option>
-                    <option>West Hyattsville</option>
-                    <option>Wheaton</option>
-                    <option>Wiehle-Reston East</option>
-                    <option>Woodley Park</option>
-                </select>
-                <select  id="SelectLine" >
-                    <option>Red</option>
-                    <option>Orange</option>
-                    <option>Blue</option>
-                    <option>Silver</option>
-                    <option>Yellow</option>
-                    <option>Green</option>
-                </select>
-                <select id="TypeBox">
-                    <option>At Station</option>
-                    <option>Approaching Station</option>
-                </select>
-                <select id="NearbyBox">
-                </select>
-                <br><br>
-                <button onclick="PlayAudio()">Play Audio</button>
+                <div class="split">
+                    <div class="left">
+                        <p style="margin-top: 0; margin-bottom: 4px;">Select Station</p>
+                        <select id="SelectStation" style="width: 100%; max-width: max-content;">
+                            <option>Addison Road</option>
+                            <option>Anacostia</option>
+                            <option>Archives</option>
+                            <option>Arlington Cemetery</option>
+                            <option>Ballston-MU</option>
+                            <option>Benning Road</option>
+                            <option>Bethesda</option>
+                            <option>Braddock Road</option>
+                            <option>Branch Ave</option>
+                            <option>Brookland-CUA</option>
+                            <option>Capitol Heights</option>
+                            <option>Capitol South</option>
+                            <option>Cheverly</option>
+                            <option>Clarendon</option>
+                            <option>Cleveland Park</option>
+                            <option>College Park-U of Md</option>
+                            <option>Columbia Heights</option>
+                            <option>Congress Heights</option>
+                            <option>Court House</option>
+                            <option>Crystal City</option>
+                            <option>Deanwood</option>
+                            <option>Downtown Largo</option>
+                            <option>Dunn Loring</option>
+                            <option>Dupont Circle</option>
+                            <option>East Falls Church</option>
+                            <option>Eastern Market</option>
+                            <option>Eisenhower Ave</option>
+                            <option>Farragut North</option>
+                            <option>Farragut West</option>
+                            <option>Federal Center SW</option>
+                            <option>Federal Triangle</option>
+                            <option>Foggy Bottom-GWU</option>
+                            <option>Forest Glen</option>
+                            <option>Fort Totten</option>
+                            <option>Franconia-Springfield</option>
+                            <option>Friendship Heights</option>
+                            <option>Gallery Place</option>
+                            <option>Georgia Ave-Petworth</option>
+                            <option>Glenmont</option>
+                            <option>Greenbelt</option>
+                            <option>Greensboro</option>
+                            <option>Grosvenor-Strathmore</option>
+                            <option>Huntington</option>
+                            <option>Hyattsville Crossing</option>
+                            <option>Judiciary Square</option>
+                            <option>King St-Old Town</option>
+                            <option>L'Enfant Plaza</option>
+                            <option>Landover</option>
+                            <option>McLean</option>
+                            <option>McPherson Square</option>
+                            <option>Medical Center</option>
+                            <option>Metro Center</option>
+                            <option>Minnesota Ave</option>
+                            <option>Morgan Boulevard</option>
+                            <option>Mt Vernon Sq</option>
+                            <option>Navy Yard-Ballpark</option>
+                            <option>Naylor Road</option>
+                            <option>New Carrollton</option>
+                            <option>NoMa-Gallaudet U</option>
+                            <option>North Bethesda</option>
+                            <option>Pentagon</option>
+                            <option>Pentagon City</option>
+                            <option>Potomac Ave</option>
+                            <option>Potomac Yard</option>
+                            <option>Rhode Island Ave</option>
+                            <option>Rockville</option>
+                            <option>Ronald Reagan Washington National Airport</option>
+                            <option>Rosslyn</option>
+                            <option>Shady Grove</option>
+                            <option>Shaw-Howard U</option>
+                            <option>Silver Spring</option>
+                            <option>Smithsonian</option>
+                            <option>Southern Ave</option>
+                            <option>Spring Hill</option>
+                            <option>Stadium-Armory</option>
+                            <option>Suitland</option>
+                            <option>Takoma</option>
+                            <option>Tenleytown-AU</option>
+                            <option>Twinbrook</option>
+                            <option>Tysons</option>
+                            <option>U Street</option>
+                            <option>Union Station</option>
+                            <option>Van Dorn Street</option>
+                            <option>Van Ness-UDC</option>
+                            <option>Vienna</option>
+                            <option>Virginia Square-GMU</option>
+                            <option>Waterfront</option>
+                            <option>West Falls Church</option>
+                            <option>West Hyattsville</option>
+                            <option>Wheaton</option>
+                            <option>Wiehle-Reston East</option>
+                            <option>Woodley Park</option>
+                        </select>
+                        <p style="margin-top: 4px; margin-bottom: 4px;">Select Train Status</p>
+                        <select id="TypeBox" style="width: max-content; max-width: 100%;">
+                            <option>At Station</option>
+                            <option>Approaching Station</option>
+                        </select>
+                        
+                    </div>
+                    <div class="right">
+                        <p style="margin-top: 0; margin-bottom: 4px;">Select Line</p>
+                        <select  id="SelectLine" style="width: max-content; max-width: 100%;">
+                            <option>Red</option>
+                            <option>Orange</option>
+                            <option>Blue</option>
+                            <option>Silver</option>
+                            <option>Yellow</option>
+                            <option>Green</option>
+                        </select>
+                        <p style="margin-top: 4px; margin-bottom: 4px;">Select Next Stop</p>
+                        <select id="NearbyBox" style="width: max-content; max-width: 100%;">
+                        </select>
+                    </div> 
+                </div>
+                <button onclick="PlayAudio()">Play Audio</button>             
             </div>
         </div>
     </div>
     <div class="description"></div>
-    <dialog id="settings">
+    <dialog id="settings" closedby="any">
         <form>
             <h1>Settings</h1>
             <span>Advanced Mode</span><input type="checkbox">

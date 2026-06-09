@@ -25,9 +25,6 @@ head{
     margin: 0;
     padding: 0;
 }
-.content{
-    padding-top: 15vh
-}
 
 .header{
     height: 10vh;
@@ -59,26 +56,28 @@ head{
 .content{
     display: flex;
     justify-content: space-between;
+    padding-top: 15vh;
+    padding-left: 1%;
+    padding-right: 1%;
 }
 
-.left{
-    position: static;
-    width: 50%;
-    padding: 2%;
+.left, .right{
+    flex: 1;
+    box-sizing: border-box;
 }
 
-.right{
-    position: static;
-    width: 50%;
-}
-
-.options{
+.optionpane{
     padding: 20px;
     border-color: gray;
     border-radius: 10px;
     border-width: 2px;
     position: relative;
     border-style: solid;
+}
+
+.split{
+    display: flex;
+    gap: 4%;
 }
 
 .alert {
